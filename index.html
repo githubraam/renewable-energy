@@ -488,6 +488,151 @@
     .benefit-card p  { font-size: .87rem; color: var(--mid); line-height: 1.72; }
 
     /* ============================================================
+       ADVANTAGES & LIMITATIONS
+    ============================================================ */
+    #challenges { background: var(--white); }
+
+    .challenges-head { text-align: center; margin-bottom: 64px; }
+    .challenges-head .section-eyebrow { justify-content: center; }
+    .challenges-head .section-lead    { margin: 0 auto; }
+
+    .challenges-grid {
+      display: grid; grid-template-columns: 1fr 1fr;
+      gap: 32px;
+    }
+
+    .challenge-panel {
+      border-radius: var(--radius); padding: 40px 36px;
+      position: relative; overflow: hidden;
+    }
+    .challenge-panel.pros {
+      background: linear-gradient(160deg, rgba(22,163,74,.07) 0%, rgba(22,163,74,.02) 100%);
+      border: 1.5px solid rgba(22,163,74,.22);
+    }
+    .challenge-panel.cons {
+      background: linear-gradient(160deg, rgba(245,158,11,.07) 0%, rgba(245,158,11,.02) 100%);
+      border: 1.5px solid rgba(245,158,11,.25);
+    }
+
+    .panel-header {
+      display: flex; align-items: center; gap: 14px; margin-bottom: 30px;
+    }
+    .panel-header-icon {
+      width: 54px; height: 54px; border-radius: 50%;
+      display: flex; align-items: center; justify-content: center; font-size: 24px;
+    }
+    .pros .panel-header-icon { background: rgba(22,163,74,.14); }
+    .cons .panel-header-icon { background: rgba(245,158,11,.14); }
+
+    .panel-header-text h3   { font-size: 1.22rem; font-weight: 800; }
+    .pros .panel-header-text h3 { color: var(--green-dark); }
+    .cons .panel-header-text h3 { color: #92400e; }
+    .panel-header-text span { font-size: .78rem; color: var(--mid); }
+
+    .challenge-list { list-style: none; display: flex; flex-direction: column; gap: 18px; }
+    .challenge-list li {
+      display: flex; align-items: flex-start; gap: 14px;
+      font-size: .88rem; color: var(--mid); line-height: 1.68;
+    }
+    .challenge-list li .c-ico {
+      width: 32px; height: 32px; border-radius: 8px;
+      display: flex; align-items: center; justify-content: center;
+      font-size: 15px; flex-shrink: 0; margin-top: 1px;
+    }
+    .pros .challenge-list li .c-ico { background: rgba(22,163,74,.12); }
+    .cons .challenge-list li .c-ico { background: rgba(245,158,11,.12); }
+    .challenge-list li strong { display: block; color: var(--dark); font-size: .92rem; margin-bottom: 2px; }
+
+    /* ============================================================
+       FUTURE & SOLUTIONS
+    ============================================================ */
+    #future { background: var(--light); }
+
+    .future-head { text-align: center; margin-bottom: 20px; }
+    .future-head .section-eyebrow { justify-content: center; }
+    .future-head .section-lead    { margin: 0 auto; }
+
+    .future-subhead {
+      font-size: 1.05rem; font-weight: 700; color: var(--dark);
+      margin: 52px 0 28px; display: flex; align-items: center; gap: 10px;
+    }
+    .future-subhead::after {
+      content: ''; flex: 1; height: 1px; background: rgba(0,0,0,.1);
+    }
+    .future-subhead span {
+      background: var(--grad); -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent; background-clip: text;
+    }
+
+    .solutions-grid {
+      display: grid; grid-template-columns: repeat(3, 1fr);
+      gap: 22px;
+    }
+
+    .solution-card {
+      background: var(--white); border-radius: var(--radius);
+      padding: 28px 24px;
+      box-shadow: 0 2px 14px rgba(0,0,0,.06);
+      border-top: 3px solid var(--green);
+      transition: var(--t);
+    }
+    .solution-card:hover {
+      transform: translateY(-6px);
+      box-shadow: var(--shadow);
+      border-top-color: var(--blue);
+    }
+    .solution-card .s-ico  { font-size: 28px; margin-bottom: 14px; }
+    .solution-card h4      { font-size: 1rem; font-weight: 700; color: var(--dark); margin-bottom: 8px; }
+    .solution-card p       { font-size: .85rem; color: var(--mid); line-height: 1.72; }
+    .solution-tag {
+      display: inline-block; margin-top: 14px;
+      background: rgba(22,163,74,.1); color: var(--green-dark);
+      font-size: .72rem; font-weight: 700; letter-spacing: .5px;
+      padding: 4px 12px; border-radius: 20px;
+    }
+
+    /* Future Tech — dark cards */
+    .future-tech-grid {
+      display: grid; grid-template-columns: repeat(3, 1fr);
+      gap: 22px;
+    }
+
+    .tech-card {
+      background: var(--dark); color: var(--white);
+      border-radius: var(--radius); padding: 30px 26px;
+      position: relative; overflow: hidden;
+      transition: var(--t);
+    }
+    .tech-card::before {
+      content: ''; position: absolute; inset: 0;
+      background: var(--grad); opacity: 0;
+      transition: opacity .35s var(--ease);
+    }
+    .tech-card:hover { transform: translateY(-6px); box-shadow: 0 16px 48px rgba(0,0,0,.3); }
+    .tech-card:hover::before { opacity: .12; }
+
+    .tech-card-content { position: relative; z-index: 1; }
+    .tech-card .t-ico   { font-size: 30px; margin-bottom: 14px; }
+    .tech-card h4       { font-size: 1rem; font-weight: 700; margin-bottom: 8px; color: var(--white); }
+    .tech-card p        { font-size: .84rem; color: rgba(255,255,255,.6); line-height: 1.7; }
+    .tech-horizon {
+      display: inline-block; margin-top: 14px;
+      background: rgba(255,255,255,.08); color: rgba(255,255,255,.75);
+      font-size: .72rem; font-weight: 600; letter-spacing: .5px;
+      padding: 4px 12px; border-radius: 20px;
+    }
+
+    @media (max-width: 768px) {
+      .challenges-grid   { grid-template-columns: 1fr; }
+      .solutions-grid    { grid-template-columns: 1fr; }
+      .future-tech-grid  { grid-template-columns: 1fr; }
+    }
+    @media (min-width: 769px) and (max-width: 1024px) {
+      .solutions-grid   { grid-template-columns: repeat(2, 1fr); }
+      .future-tech-grid { grid-template-columns: repeat(2, 1fr); }
+    }
+
+    /* ============================================================
        FOOTER
     ============================================================ */
     footer {
@@ -952,6 +1097,221 @@
 
 
 <!-- ============================================================
+     ADVANTAGES & LIMITATIONS
+============================================================ -->
+<section id="challenges">
+  <div class="container">
+
+    <div class="challenges-head reveal">
+      <div class="section-eyebrow">Balanced View</div>
+      <h2 class="section-title">Advantages &amp; Limitations</h2>
+      <p class="section-lead">
+        Renewable energy holds enormous promise, but a clear-eyed view means understanding both
+        what it does brilliantly and where real challenges still exist.
+      </p>
+    </div>
+
+    <div class="challenges-grid">
+
+      <!-- ADVANTAGES -->
+      <div class="challenge-panel pros reveal-left">
+        <div class="panel-header">
+          <div class="panel-header-icon">✅</div>
+          <div class="panel-header-text">
+            <h3>Advantages</h3>
+            <span>Why renewables are the right path forward</span>
+          </div>
+        </div>
+        <ul class="challenge-list">
+          <li>
+            <div class="c-ico">♻️</div>
+            <div><strong>Zero Operational Emissions</strong>Once installed, solar, wind, and hydro produce electricity with no greenhouse gas output — directly fighting climate change at its source.</div>
+          </li>
+          <li>
+            <div class="c-ico">💰</div>
+            <div><strong>Rapidly Falling Costs</strong>Solar costs dropped 89% since 2010 and wind by over 70%. Renewables now produce the cheapest electricity in history across many regions.</div>
+          </li>
+          <li>
+            <div class="c-ico">🛡️</div>
+            <div><strong>Energy Independence</strong>Domestic generation frees nations from volatile fossil fuel import markets, reducing geopolitical risk and strengthening national security.</div>
+          </li>
+          <li>
+            <div class="c-ico">👷</div>
+            <div><strong>Millions of Green Jobs</strong>The sector already employs 13M+ people globally in manufacturing, installation, maintenance, and R&amp;D — and is growing fast.</div>
+          </li>
+          <li>
+            <div class="c-ico">🏥</div>
+            <div><strong>Public Health Gains</strong>Replacing fossil fuel combustion eliminates a major source of air and water pollution, reducing respiratory disease, cancers, and premature deaths.</div>
+          </li>
+          <li>
+            <div class="c-ico">♾️</div>
+            <div><strong>Inexhaustible by Nature</strong>Unlike coal or oil, sunlight, wind, and water are perpetually replenished. They will never run out — making them a permanent energy foundation.</div>
+          </li>
+        </ul>
+      </div>
+
+      <!-- LIMITATIONS -->
+      <div class="challenge-panel cons reveal-right">
+        <div class="panel-header">
+          <div class="panel-header-icon">⚠️</div>
+          <div class="panel-header-text">
+            <h3>Limitations</h3>
+            <span>Challenges that must be honestly addressed</span>
+          </div>
+        </div>
+        <ul class="challenge-list">
+          <li>
+            <div class="c-ico">🌤️</div>
+            <div><strong>Intermittency &amp; Variability</strong>Solar panels produce nothing at night; wind turbines stop in calm weather. Output is unpredictable and not always aligned with peak demand.</div>
+          </li>
+          <li>
+            <div class="c-ico">🏗️</div>
+            <div><strong>High Upfront Capital Cost</strong>Despite falling prices, initial infrastructure investment — especially for offshore wind and large hydro — remains a barrier for developing nations.</div>
+          </li>
+          <li>
+            <div class="c-ico">🗺️</div>
+            <div><strong>Geographic Dependency</strong>Optimal generation requires specific conditions: sunny climates for solar, coastal wind for turbines, rivers for hydro — limiting universal applicability.</div>
+          </li>
+          <li>
+            <div class="c-ico">🔌</div>
+            <div><strong>Grid Integration Complexity</strong>Power grids were designed for steady fossil fuel output. Integrating variable renewables requires costly upgrades to transmission and distribution infrastructure.</div>
+          </li>
+          <li>
+            <div class="c-ico">🌍</div>
+            <div><strong>Large Land Footprint</strong>Utility-scale solar and wind farms require significant land area, creating competition with agriculture, biodiversity, and local ecosystems.</div>
+          </li>
+          <li>
+            <div class="c-ico">🔋</div>
+            <div><strong>Energy Storage at Scale</strong>Storing surplus energy economically for days or weeks remains technically difficult, making 24/7 renewable supply challenging without backup systems.</div>
+          </li>
+        </ul>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+
+<!-- ============================================================
+     FUTURE & SOLUTIONS
+============================================================ -->
+<section id="future">
+  <div class="container">
+
+    <div class="future-head reveal">
+      <div class="section-eyebrow">Looking Ahead</div>
+      <h2 class="section-title">Overcoming Challenges &amp; Future Advancements</h2>
+      <p class="section-lead">
+        Every limitation of renewable energy has a solution in progress. From smarter grids to
+        breakthrough materials, the future of clean energy is closer than you think.
+      </p>
+    </div>
+
+    <!-- OVERCOMING LIMITATIONS -->
+    <div class="future-subhead reveal">
+      <span>Overcoming Current Limitations</span>
+    </div>
+
+    <div class="solutions-grid">
+      <div class="solution-card reveal d1">
+        <div class="s-ico">🔋</div>
+        <h4>Advanced Energy Storage</h4>
+        <p>Next-generation batteries — solid-state, flow batteries, and pumped hydro — are scaling rapidly to store days of surplus renewable energy, solving the intermittency problem at its root.</p>
+        <span class="solution-tag">Addresses: Intermittency</span>
+      </div>
+      <div class="solution-card reveal d2">
+        <div class="s-ico">🤖</div>
+        <h4>Smart Grids &amp; AI Management</h4>
+        <p>AI-driven smart grids predict demand, balance variable supply in real time, and automatically reroute power. They transform fragile grids into intelligent, self-healing energy networks.</p>
+        <span class="solution-tag">Addresses: Grid Integration</span>
+      </div>
+      <div class="solution-card reveal d3">
+        <div class="s-ico">💧</div>
+        <h4>Green Hydrogen</h4>
+        <p>Surplus renewable electricity electrolyzes water into clean hydrogen. Stored and transported like gas, it can power industry, vehicles, and heating — a universal renewable fuel carrier.</p>
+        <span class="solution-tag">Addresses: Storage &amp; Intermittency</span>
+      </div>
+      <div class="solution-card reveal d1">
+        <div class="s-ico">🌊</div>
+        <h4>Offshore &amp; Floating Solutions</h4>
+        <p>Floating solar arrays and deep-water offshore wind turbines bring generation to vast ocean and lake surfaces, unlocking enormous clean energy potential away from populated land areas.</p>
+        <span class="solution-tag">Addresses: Land Use</span>
+      </div>
+      <div class="solution-card reveal d2">
+        <div class="s-ico">🌾</div>
+        <h4>Agrivoltaics</h4>
+        <p>Co-locating solar panels above farmland allows simultaneous crop cultivation and power generation. Studies show certain crops actually thrive under partial shading, boosting yields and energy output together.</p>
+        <span class="solution-tag">Addresses: Land Competition</span>
+      </div>
+      <div class="solution-card reveal d3">
+        <div class="s-ico">🌐</div>
+        <h4>Policy &amp; Finance Frameworks</h4>
+        <p>Carbon pricing, green bonds, blended finance, and international climate agreements are dramatically lowering investment barriers, channelling trillions toward clean energy in developing economies.</p>
+        <span class="solution-tag">Addresses: Upfront Costs</span>
+      </div>
+    </div>
+
+    <!-- FUTURE ADVANCEMENTS -->
+    <div class="future-subhead reveal">
+      <span>Future Technologies on the Horizon</span>
+    </div>
+
+    <div class="future-tech-grid">
+      <div class="tech-card reveal d1">
+        <div class="tech-card-content">
+          <div class="t-ico">🔬</div>
+          <h4>Perovskite Solar Cells</h4>
+          <p>A breakthrough material capable of 33%+ efficiency at a fraction of silicon's manufacturing cost. Could make solar panels cheap enough to coat every rooftop and window on Earth.</p>
+          <span class="tech-horizon">Est. Commercial: 2027–2030</span>
+        </div>
+      </div>
+      <div class="tech-card reveal d2">
+        <div class="tech-card-content">
+          <div class="t-ico">🛰️</div>
+          <h4>Space-Based Solar Power</h4>
+          <p>Satellites in geostationary orbit collect uninterrupted solar energy 24/7 and beam it to Earth as microwaves — completely immune to weather, night cycles, or seasonal variation.</p>
+          <span class="tech-horizon">Est. Pilot: 2030s</span>
+        </div>
+      </div>
+      <div class="tech-card reveal d3">
+        <div class="tech-card-content">
+          <div class="t-ico">💥</div>
+          <h4>Nuclear Fusion</h4>
+          <p>The "holy grail" of energy — mimicking the sun's process to release near-limitless clean power from hydrogen isotopes, with no long-lived radioactive waste and zero carbon emissions.</p>
+          <span class="tech-horizon">Est. Grid Power: 2040s</span>
+        </div>
+      </div>
+      <div class="tech-card reveal d1">
+        <div class="tech-card-content">
+          <div class="t-ico">🪁</div>
+          <h4>Airborne Wind Turbines</h4>
+          <p>Kite and drone-based turbines soar to 600m+ altitudes where winds are 8× stronger and more consistent than at ground level, generating far more energy with far less material.</p>
+          <span class="tech-horizon">Est. Commercial: 2028–2032</span>
+        </div>
+      </div>
+      <div class="tech-card reveal d2">
+        <div class="tech-card-content">
+          <div class="t-ico">🧠</div>
+          <h4>AI-Optimised Energy Grids</h4>
+          <p>Deep learning models will forecast generation and demand across millions of nodes, automatically balancing renewable supply in real time — enabling truly 100% clean grids to run reliably.</p>
+          <span class="tech-horizon">Est. Deployment: 2025–2030</span>
+        </div>
+      </div>
+      <div class="tech-card reveal d3">
+        <div class="tech-card-content">
+          <div class="t-ico">🚗</div>
+          <h4>Vehicle-to-Grid (V2G)</h4>
+          <p>Bidirectional EV charging turns every electric vehicle into a distributed battery. During peak demand, parked cars feed stored energy back to the grid — creating a vast, decentralised power reserve.</p>
+          <span class="tech-horizon">Est. Mass Adoption: 2026–2030</span>
+        </div>
+      </div>
+    </div>
+
+  </div>
+</section>
+
+
+<!-- ============================================================
      FOOTER
 ============================================================ -->
 <footer>
@@ -974,6 +1334,8 @@
           <li><a href="#about">About</a></li>
           <li><a href="#history">History</a></li>
           <li><a href="#benefits">Benefits</a></li>
+          <li><a href="#challenges">Advantages &amp; Limits</a></li>
+          <li><a href="#future">Future &amp; Solutions</a></li>
         </ul>
       </div>
 
